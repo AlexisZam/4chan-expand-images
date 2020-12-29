@@ -4,13 +4,13 @@ chrome.runtime.onInstalled.addListener(() => {
       "*://boards.4chan.org/*",
       "*://boards.4channel.org/*",
     ],
-    id: "expand-images",
+    id: "4chan-expand-images",
     title: "Expand images",
   });
 });
 
 chrome.contextMenus.onClicked.addListener((info) => {
-  if (info.menuItemId === "expand-images")
+  if (info.menuItemId === "4chan-expand-images")
     chrome.tabs.executeScript({
       code:
         'document.querySelectorAll(".fileThumb img").forEach((element) => element.click());',
